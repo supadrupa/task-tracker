@@ -31,4 +31,8 @@ def test_delete():
 
 @pytest.mark.django_db
 def test_add_comment():
-    pass
+    task = TaskFactory.create()
+    text_comment = 'test'
+    comment = task.add_comment(text_comment)
+    assert comment.text == text_comment
+    assert task.comments.count() == 1
