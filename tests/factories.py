@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 
 import factory
 
-from server.tasks.models import Task, Project
+from server.tasks.models import Task, Project, Description, Comment
 
 
 User = get_user_model()
@@ -41,3 +41,23 @@ class TaskFactory(factory.DjangoModelFactory):
     executor = factory.SubFactory(UserFactory)
     author = factory.SubFactory(UserFactory)
     project = factory.SubFactory(ProjectFactory)
+
+
+class DescriptionFactory(factory.DjangoModelFactory):
+    """
+    Define Description Factory
+    """
+    class Meta:
+        model = Description
+
+    task = factory.SubFactory(TaskFactory)
+
+
+class CommentFactory(factory.DjangoModelFactory):
+    """
+    Define Comment Factory
+    """
+    class Meta:
+        model = Comment
+
+    task = factory.SubFactory(TaskFactory)

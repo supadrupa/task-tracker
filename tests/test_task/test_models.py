@@ -1,6 +1,9 @@
 import pytest
-from server.tasks.models import Task
-from tests.factories import TaskFactory, UserFactory
+from server.tasks.models import Task, Project, Description, Comment
+from tests.factories import (
+    TaskFactory, UserFactory,
+    ProjectFactory, DescriptionFactory, CommentFactory
+)
 
 
 @pytest.mark.django_db
@@ -36,3 +39,24 @@ def test_add_comment():
     comment = task.add_comment(text_comment)
     assert comment.text == text_comment
     assert task.comments.count() == 1
+
+
+@pytest.mark.django_db
+def test_create_project():
+    project = ProjectFactory.create()
+    assert Project.objects.count() == 1
+    assert str(project) == project.name
+
+
+@pytest.mark.django_db
+def test_create_description():
+    description = DescriptionFactory.create()
+    assert Description.objects.count() == 1
+    assert str(description) == description.text
+
+
+@pytest.mark.django_db
+def test_create_comment():
+    comment = CommentFactory.create()
+    assert Comment.objects.count() == 1
+    assert str(comment) == comment.text
