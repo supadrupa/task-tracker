@@ -76,3 +76,25 @@ class Description(models.Model):
     def __str__(self):
         """Unicode representation of Description."""
         return self.text
+
+
+class Comment(models.Model):
+    """Model definition for Comment."""
+
+    task = models.ForeignKey(
+        Task,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name=_('task')
+    )
+    text = models.CharField(_('text'), max_length=255)
+
+    class Meta:
+        """Meta definition for Comment."""
+
+        verbose_name = _('Comment')
+        verbose_name_plural = _('Comments')
+
+    def __str__(self):
+        """Unicode representation of Comment."""
+        return self.text
