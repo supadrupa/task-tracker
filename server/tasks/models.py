@@ -56,7 +56,7 @@ class Task(models.Model):
         """Unicode representation of Task."""
         return self.name
 
-    def add_comment(self, text):
+    def add_comment(self, text: str):
         comment = Comment.objects.create(
             task=self,
             text=text
