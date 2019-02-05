@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 
 import factory
 
-from server.tasks.models import Task, Project, Description, Comment
+from server.tasks.models import Comment, Description, Project, Task
 
 
 User = get_user_model()

@@ -183,6 +183,14 @@ version = "2.8"
 
 [[package]]
 category = "dev"
+description = "A port of Ruby on Rails inflector to Python"
+name = "inflection"
+optional = false
+python-versions = "*"
+version = "0.3.1"
+
+[[package]]
+category = "dev"
 description = "IPython: Productive Interactive Computing"
 name = "ipython"
 optional = false
@@ -419,6 +427,19 @@ pytest = ">=3.6"
 
 [[package]]
 category = "dev"
+description = "Factory Boy support for pytest."
+name = "pytest-factoryboy"
+optional = false
+python-versions = "*"
+version = "2.0.2"
+
+[package.dependencies]
+factory_boy = ">=2.10.0"
+inflection = "*"
+pytest = ">=3.3.2"
+
+[[package]]
+category = "dev"
 description = "take TDD to a new level with py.test and testmon"
 name = "pytest-testmon"
 optional = false
@@ -524,7 +545,7 @@ python-versions = "*"
 version = "0.1.7"
 
 [metadata]
-content-hash = "dd5d70ea64cd749a77133320e9c7f99c215783228f362736c2404ae823b866b2"
+content-hash = "a1b0e963d011a9768fa108add72a591f3342a314abe5be31848276fda30a3041"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -547,6 +568,7 @@ factory-boy = ["6f25cc4761ac109efd503f096e2ad99421b1159f01a29dbb917359dcd68e08ca
 faker = ["16342dca4d92bfc83bab6a7daf6650e0ab087605a66bc38f17523fdb01757910", "d871ea315b2dcba9138b8344f2c131a76ac62d6227ca39f69b0c889fec97376c"]
 flake8 = ["09b9bb539920776da542e67a570a5df96ff933c9a08b62cfae920bcc789e4383", "e0f8cd519cfc0072c0ee31add5def09d2b3ef6040b34dc426445c3af9b02163c"]
 idna = ["c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407", "ea8b7f6188e6fa117537c3df7da9fc686d485087abf6ac197f9c46432f7e4a3c"]
+inflection = ["18ea7fb7a7d152853386523def08736aa8c32636b047ade55f7578c4edeb16ca"]
 ipython = ["6a9496209b76463f1dec126ab928919aaf1f55b38beb9219af3fe202f6bbdd12", "f69932b1e806b38a7818d9a1e918e5821b685715040b48e59c657b3c7961b742"]
 ipython-genutils = ["72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8", "eb2e116e75ecef9d4d228fdc66af54269afa26ab4463042e33785b887c628ba8"]
 itypes = ["c6e77bb9fd68a4bfeb9d958fea421802282451a25bac4913ec94db82a899c073"]
@@ -570,6 +592,7 @@ pygments = ["5ffada19f6203563680669ee7f53b64dabbeb100eb51b61996085e99c03b284a", 
 pytest = ["65aeaa77ae87c7fc95de56285282546cfa9c886dc8e5dc78313db1c25e21bc07", "6ac6d467d9f053e95aaacd79f831dbecfe730f419c6c7022cb316b365cd9199d"]
 pytest-cov = ["0ab664b25c6aa9716cbf203b17ddb301932383046082c081b9848a0edf5add33", "230ef817450ab0699c6cc3c9c8f7a829c34674456f2ed8df1fe1d39780f7c87f"]
 pytest-django = ["3d489db7c9bd18d7c154347b1bdfb82cc6b1ec8539543508b199c77e5eb2caec", "87c31e53ad09ca4f061b82a9d71ad1e3e399c7a5ec9d28f7c3c38a9a9afbd027"]
+pytest-factoryboy = ["b1bdb7da9078eb84a6cb9b7b93dda9cfb575488df04f91b1ab4d20a1dfce8faf"]
 pytest-testmon = ["47fb5d4faa16bf431afbf404029167c18703ffa673d83b13a354186385f25246"]
 python-dateutil = ["063df5763652e21de43de7d9e00ccf239f953a832941e37be541614732cdfc93", "88f9287c0174266bb0d8cedd395cfba9c58e87e5ad86b2ce58859bc11be3cf02"]
 pytz = ["32b0891edff07e28efe91284ed9c31e123d84bea3fd98e1f72be2508f43ef8d9", "d5f05e487007e29e03409f9398d074e158d920d36eb82eaf66fb1136b0c5374c"]

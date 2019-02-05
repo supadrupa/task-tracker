@@ -4,18 +4,13 @@ from django.utils.translation import gettext as _
 
 
 class Project(models.Model):
-    """Model definition for Project."""
-
     name = models.CharField(_('name'), max_length=50)
 
     class Meta:
-        """Meta definition for Project."""
-
         verbose_name = _('Project')
         verbose_name_plural = _('Projects')
 
     def __str__(self):
-        """Unicode representation of Project."""
         return self.name
 
 
@@ -47,13 +42,10 @@ class Task(models.Model):
     )
 
     class Meta:
-        """Meta definition for Task."""
-
         verbose_name = _('Task')
         verbose_name_plural = _('Tasks')
 
     def __str__(self):
-        """Unicode representation of Task."""
         return self.name
 
     def add_comment(self, text: str):
@@ -65,7 +57,6 @@ class Task(models.Model):
 
 
 class Description(models.Model):
-    """Model definition for Description."""
     text = models.CharField(_('text'), max_length=255)
     task = models.ForeignKey(
         Task,
@@ -75,19 +66,14 @@ class Description(models.Model):
     )
 
     class Meta:
-        """Meta definition for Description."""
-
         verbose_name = _('Description')
         verbose_name_plural = _('Descriptions')
 
     def __str__(self):
-        """Unicode representation of Description."""
         return self.text
 
 
 class Comment(models.Model):
-    """Model definition for Comment."""
-
     task = models.ForeignKey(
         Task,
         on_delete=models.CASCADE,
@@ -97,11 +83,8 @@ class Comment(models.Model):
     text = models.CharField(_('text'), max_length=255)
 
     class Meta:
-        """Meta definition for Comment."""
-
         verbose_name = _('Comment')
         verbose_name_plural = _('Comments')
 
     def __str__(self):
-        """Unicode representation of Comment."""
         return self.text

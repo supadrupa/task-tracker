@@ -20,6 +20,7 @@ from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/docs/', include_docs_urls(title='API Task Tracker')),
     path('api/', include('server.tasks.urls', namespace='tasks')),
+    path('api/', include('server.users.urls', namespace='users')),
+    path('api/docs/', include_docs_urls(title='API Task Tracker')),
 ]
