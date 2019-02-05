@@ -25,6 +25,8 @@ services:
     environment:
       DJANGO_DATABASE_HOST: db
     command: python -Wd manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
 
 networks:
   webnet:
