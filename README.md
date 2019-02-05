@@ -16,6 +16,7 @@ To start development server inside ``docker`` you will need to run:
 docker-compose build
 docker-compose run --rm web python manage.py migrate
 docker-compose run --rm web python manage.py createsuperuser
+docker-compose run --rm web pytest
 docker-compose up
 ```
 
