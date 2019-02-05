@@ -10,6 +10,8 @@ django = "^2.1"
 djangorestframework = "^3.9"
 django-filter = "^2.1"
 coreapi = "^2.3"
+gunicorn = "^19.9"
+psycopg2 = "^2.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.2"

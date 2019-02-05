@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$jg^_3tz+s432j2jmpu7rva#mhctjr&)&3t-dflm2g!rpum+1e'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,9 +79,19 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        # Choices are: postgresql_psycopg2, mysql, sqlite3, oracle
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        # Database name or filepath if using 'sqlite3':
+        'NAME': os.getenv('POSTGRES_DB'),
+
+        # You don't need these settings if using 'sqlite3':
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('DJANGO_DATABASE_HOST'),
+        'PORT': os.getenv('DJANGO_DATABASE_PORT', cast=int),
+        'CONN_MAX_AGE': os.getenv('CONN_MAX_AGE', cast=int, default=60),
+    },
 }
 
 
