@@ -89,8 +89,8 @@ DATABASES = {
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
         'HOST': os.getenv('DJANGO_DATABASE_HOST'),
-        'PORT': os.getenv('DJANGO_DATABASE_PORT', cast=int),
-        'CONN_MAX_AGE': os.getenv('CONN_MAX_AGE', cast=int, default=60),
+        'PORT': os.getenv('DJANGO_DATABASE_PORT'),
+        'CONN_MAX_AGE': os.getenv('CONN_MAX_AGE', default=60),
     },
 }
 
